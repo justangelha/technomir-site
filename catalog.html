@@ -69,6 +69,11 @@
 <!-- Фильтр -->
 <div class="col-lg-3">
   <div class="filter-box bg-white rounded-4 p-4 shadow-sm">
+    <!-- Кнопка закрытия для мобильной версии -->
+<button type="button" class="btn-close-mobile d-lg-none" onclick="toggleFilter()">
+  <i class="bi bi-x-lg"></i> Закрыть
+</button>
+
     <h4 class="fw-bold mb-3">Фильтры</h4>
 
     <h5 class="fw-semibold mt-4 mb-2">Категории</h5>
@@ -101,6 +106,8 @@
     <button class="btn btn-secondary w-100 mt-3" id="resetFilters">Сбросить фильтры</button>
   </div>
 </div>
+<div class="filter-overlay d-lg-none" onclick="toggleFilter()"></div>
+
 
 <!-- ======= Товары ======= -->
 <div class="col-lg-9">
@@ -464,6 +471,17 @@ function applyFilters() {
 
     card.parentElement.style.display = (matchCategory && matchBrand && matchPrice) ? 'block' : 'none';
   });
+}
+
+function toggleFilter() {
+  const filterBox = document.querySelector('.filter-box');
+  const overlay = document.querySelector('.filter-overlay');
+  const body = document.body;
+
+  const isOpen = filterBox.classList.toggle('show');
+  overlay.classList.toggle('show', isOpen);
+
+  body.style.overflow = isOpen ? 'hidden' : '';
 }
 </script>
 

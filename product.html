@@ -7,6 +7,10 @@
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
@@ -211,7 +215,7 @@
                 <img :src="p.img" alt="" class="img-fluid rounded mb-3" style="height:180px;object-fit:contain;">
                 <h6 class="fw-semibold" x-text="p.name"></h6>
                 <p class="text-muted small mb-2" x-text="p.desc"></p>
-                <p class="fw-bold mb-3">₽ <span x-text="p.price.toLocaleString()"></span></p>
+                <p class="fw-bold mb-3"> <span x-text="p.price.toLocaleString()">₽</span></p>
                 <a :href="`product.html?id=${p.id}`" class="btn btn-outline-dark btn-sm w-100">Подробнее</a>
               </div>
             </div>

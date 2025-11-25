@@ -911,3 +911,71 @@ body {
 .scroll-top i {
   font-size: 20px;
 }
+
+
+@media (max-width: 991px) {
+  /* затемнение заднего плана */
+  .filter-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .filter-overlay.show {
+    display: block;
+    opacity: 1;
+  }
+
+  /* сама панель фильтра */
+  .filter-box {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fff;
+    z-index: 1050;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 25px 20px 30px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .filter-box.show {
+    display: block;
+    transform: translateY(0);
+  }
+
+  /* кнопка закрыть */
+  .btn-close-mobile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: #111;
+    font-size: 16px;
+  }
+  .btn-close-mobile i {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 991px) {
+  .filter-box {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .filter-box.show {
+    display: block;
+    transform: translateY(0);
+  }
+}
