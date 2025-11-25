@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Техномир — Главная</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- ======= Меню без JS ======= -->
+<input type="checkbox" id="menu-toggle" hidden>
+
+<label for="menu-toggle" class="menu-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<nav class="side-menu">
+  <div class="menu-header">
+    <h2>TECHNOMIR</h2>
+    <label for="menu-toggle" class="menu-close">&times;</label>
+  </div>
+  <ul class="menu-links">
+    <li><a href="index.html" class="active">Главная</a></li>
+    <li><a href="catalog.html">Каталог</a></li>
+    <li><a href="cart.html">Корзина</a></li>
+    <li><a href="about.html">О нас</a></li>
+    <li><a href="contact.html">Контакты</a></li>
+  </ul>
+</nav>
+
+<!-- ===== Иконка корзины ===== -->
+<a href="cart.html" class="cart-icon">
+  <i class="bi bi-cart3"></i>
+  <span class="cart-count">0</span>
+</a>
+
+
+  <!-- ======= Контент ======= -->
+  <main class="content">
+
+    <!-- ===== HERO ===== -->
+     
+    <section class="hero-section d-flex align-items-center justify-content-between">
+      <div class="hero-text">
+        <h1 class="hero-title">TECHNOMIR</h1>
+
+        <div class="hero-box short">
+          <p>
+            Техномир — это не просто техника.  
+            Это вдохновение в каждой детали.
+          </p>
+        </div>
+
+        <div class="hero-box long">
+          <p>
+            Мы верим, что технологии способны вдохновлять и менять жизнь к лучшему.  
+            Каждый ноутбук, монитор и аксессуар подбирается с заботой о тебе —  
+            чтобы сделать работу, творчество и отдых комфортнее, быстрее и ярче.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="catalog.html" class="btn btn-main">Перейти в каталог</a>
+          <a href="contact.html" class="btn btn-secondary">Связаться</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="img/hero.png" alt="Ноутбук Technomir">
+      </div>
+    </section>
+
+<!-- ======= Верхний баннер акции ======= -->
+<div class="top-promo-banner text-center py-2">
+  🎁 <strong>Скидка 10%</strong> на первый заказ до конца месяца!
+  <button class="promo-link" data-bs-toggle="modal" data-bs-target="#promoModal">Подробнее</button>
+</div>
+
+<!-- ======= Модальное окно акции ======= -->
+<div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow-lg">
+      <div class="modal-body text-center p-4">
+        <div class="promo-icon mb-2">🎁</div>
+        <h4 id="promoLabel" class="fw-bold mb-2">АКЦИЯ МЕСЯЦА</h4>
+        <p class="text-muted mb-3">
+          Совершите свой <strong>первый заказ в TECHNOMIR</strong> и получите
+          <strong class="text-dark">скидку 10%</strong> на любую технику.
+        </p>
+
+        <div class="small text-muted mb-2">До конца акции осталось:</div>
+        <div class="timer-modern fw-semibold mb-4" id="timer">-- дн --:--:--</div>
+
+        <a href="catalog.html" class="btn btn-dark px-4 py-2 rounded-pill">
+          Перейти в каталог
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+<!-- ===== Отзывы ===== -->
+  <section class="container py-5">
+    <h2 class="section-title text-center">Отзывы наших клиентов</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm border-0 review-card h-100 text-center">
+          <p class="fst-italic mb-3">“Отличный магазин! Купила ноутбук HP — быстро доставили, всё упаковано идеально. Теперь рекомендую всем друзьям.”</p>
+          <div class="text-warning mb-2">★★★★★</div>
+          <h6 class="fw-bold mb-0">Екатерина Смирнова</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm border-0 review-card h-100 text-center">
+          <p class="fst-italic mb-3">“Порадовал сервис и консультация — помогли подобрать монитор для работы с цветом. Качество отличное, всё как описано.”</p>
+          <div class="text-warning mb-2">★★★★★</div>
+          <h6 class="fw-bold mb-0">Алексей Волков</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm border-0 review-card h-100 text-center">
+          <p class="fst-italic mb-3">“Уже не первый заказ в Техномире — всегда быстро, аккуратно и с гарантией. SSD работает как часы, спасибо!”</p>
+          <div class="text-warning mb-2">★★★★★</div>
+          <h6 class="fw-bold mb-0">Марина Кузнецова</h6>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="container py-5 features-section">
+  <h2 class="section-title text-center mb-4">Почему выбирают Техномир?</h2>
+  <div class="row text-center g-4">
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="feature-card h-100">
+        <i class="bi bi-lightning-charge"></i>
+        <h6>Современные технологии</h6>
+        <p class="text-muted small">Актуальные модели и новейшие комплектующие</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="feature-card h-100">
+        <i class="bi bi-truck"></i>
+        <h6>Быстрая доставка</h6>
+        <p class="text-muted small">По Туле - 1 день, по России - до 10 дней</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="feature-card h-100">
+        <i class="bi bi-shield-check"></i>
+        <h6>Гарантия и качество</h6>
+        <p class="text-muted small">Только сертифицированная техника</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="feature-card h-100">
+        <i class="bi bi-headset"></i>
+        <h6>Поддержка 24/7</h6>
+        <p class="text-muted small">Помощь и консультации даже после покупки</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="feature-card h-100">
+        <i class="bi bi-gift"></i>
+        <h6>Бонусы и скидки</h6>
+        <p class="text-muted small">Постоянные акции для клиентов</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-2">
+      <div class="feature-card h-100">
+        <i class="bi bi-cash-stack"></i>
+        <h6>Выгодные цены</h6>
+        <p class="text-muted small">Без переплат и посредников</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5 steps-section">
+  <h2 class="section-title text-center mb-4">Как мы работаем?</h2>
+  <div class="row g-4 text-center">
+    <div class="col-6 col-md-3">
+      <div class="step-card h-100">
+        <i class="bi bi-laptop"></i>
+        <h6>Вы выбираете</h6>
+        <p class="text-muted small">Технику в каталоге или с помощью консультанта</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="step-card h-100">
+        <i class="bi bi-chat-square-text"></i>
+        <h6>Мы консультируем</h6>
+        <p class="text-muted small">Подбираем оптимальную модель под ваши задачи</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="step-card h-100">
+        <i class="bi bi-box-seam"></i>
+        <h6>Доставляем быстро</h6>
+        <p class="text-muted small">В удобное время и место</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="step-card h-100">
+        <i class="bi bi-hand-thumbs-up"></i>
+        <h6>Вы довольны</h6>
+        <p class="text-muted small">Надёжная техника и честный сервис</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- ======= Категории ======= -->
+    <section class="container py-5">
+      <h2 class="section-title text-center">Категории товаров</h2>
+      <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3">
+        <a href="catalog.html" class="text-decoration-none text-dark">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/cat-laptops.png" class="card-img-top" alt="Ноутбуки">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold">Ноутбуки</h5>
+              <p class="small text-muted">15 моделей</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a href="catalog.html" class="text-decoration-none text-dark">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/cat-pc.png" class="card-img-top" alt="ПК">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold">Настольные ПК</h5>
+              <p class="small text-muted">12 моделей</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a href="catalog.html" class="text-decoration-none text-dark">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/cat-monitors.png" class="card-img-top" alt="Мониторы">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold">Мониторы</h5>
+              <p class="small text-muted">10 моделей</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a href="catalog.html" class="text-decoration-none text-dark">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="img/cat-accessories.png" class="card-img-top" alt="Аксессуары">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold">Аксессуары</h5>
+              <p class="small text-muted">30 товаров</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ======= Популярные товары ======= -->
+<section class="container py-5">
+  <h2 class="section-title text-center mb-4">Популярные товары</h2>
+
+  <div class="row g-4 justify-content-center">
+
+    <!-- HP Victus 16 -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="product-card text-center"
+           data-name="HP Victus 16"
+           data-price="89990"
+           data-img="img/laptop.png"
+           onclick="openCatalog(event)">
+        <img src="img/laptop.png" alt="HP Victus 16">
+        <h5>HP Victus 16</h5>
+        <p class="text-muted small">i5 • 16 ГБ • 512 ГБ SSD</p>
+        <p class="price">₽ 89 990</p>
+
+        <div class="cart-actions mt-2">
+          <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation(); addToCartHandler(this)">
+            <i class="bi bi-cart-plus"></i> Добавить в корзину
+          </button>
+
+          <div class="quantity-box mt-2 d-none">
+            <button class="btn btn-outline-dark btn-sm decrease">–</button>
+            <span class="quantity fw-semibold fs-6">1</span>
+            <button class="btn btn-outline-dark btn-sm increase">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASUS ROG Desktop -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="product-card text-center"
+           data-name="ASUS ROG Desktop"
+           data-price="149990"
+           data-img="img/desktop.png"
+           onclick="openCatalog(event)">
+        <img src="img/desktop.png" alt="ASUS ROG Desktop">
+        <h5>ASUS ROG Desktop</h5>
+        <p class="text-muted small">Ryzen 5 • RTX 4060</p>
+        <p class="price">₽ 149 990</p>
+
+        <div class="cart-actions mt-2">
+          <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation(); addToCartHandler(this)">
+            <i class="bi bi-cart-plus"></i> Добавить в корзину
+          </button>
+
+          <div class="quantity-box mt-2 d-none">
+            <button class="btn btn-outline-dark btn-sm decrease">–</button>
+            <span class="quantity fw-semibold fs-6">1</span>
+            <button class="btn btn-outline-dark btn-sm increase">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Acer Nitro 27″ -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="product-card text-center"
+           data-name="Acer Nitro 27″"
+           data-price="19990"
+           data-img="img/monitor.png"
+           onclick="openCatalog(event)">
+        <img src="img/monitor.png" alt="Acer Nitro 27″">
+        <h5>Acer Nitro 27″</h5>
+        <p class="text-muted small">IPS • 180 Гц</p>
+        <p class="price">₽ 19 990</p>
+
+        <div class="cart-actions mt-2">
+          <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation(); addToCartHandler(this)">
+            <i class="bi bi-cart-plus"></i> Добавить в корзину
+          </button>
+
+          <div class="quantity-box mt-2 d-none">
+            <button class="btn btn-outline-dark btn-sm decrease">–</button>
+            <span class="quantity fw-semibold fs-6">1</span>
+            <button class="btn btn-outline-dark btn-sm increase">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Samsung 990 EVO 1 ТБ -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="product-card text-center"
+           data-name="Samsung 990 EVO 1 ТБ"
+           data-price="7990"
+           data-img="img/ssd.png"
+           onclick="openCatalog(event)">
+        <img src="img/ssd.png" alt="Samsung 990 EVO 1 ТБ">
+        <h5>Samsung 990 EVO 1 ТБ</h5>
+        <p class="text-muted small">PCIe 4.0 x4</p>
+        <p class="price">₽ 7 990</p>
+
+        <div class="cart-actions mt-2">
+          <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation(); addToCartHandler(this)">
+            <i class="bi bi-cart-plus"></i> Добавить в корзину
+          </button>
+
+          <div class="quantity-box mt-2 d-none">
+            <button class="btn btn-outline-dark btn-sm decrease">–</button>
+            <span class="quantity fw-semibold fs-6">1</span>
+            <button class="btn btn-outline-dark btn-sm increase">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ======= Новости ======= -->
+<section class="container py-5">
+  <h2 class="section-title text-center">Новости и статьи</h2>
+
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-12 col-md-4">
+      <div class="news-card">
+        <img src="img/news-laptop.png" alt="Технологический лайфхак">
+        <div class="news-info">
+          <p class="news-meta">11 окт 2025 — Технологии</p>
+          <h5>Технологические хитрости, о которых вы не знали</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="news-card">
+        <img src="img/news-watch.png" alt="Лучшие умные часы">
+        <div class="news-info">
+          <p class="news-meta">11 окт 2025 — Смарт-часы</p>
+          <h5>Лучшие умные часы, которые стоит купить в этом году</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="news-card">
+        <img src="img/news-gimbal.png" alt="Стабилизатор видео">
+        <div class="news-info">
+          <p class="news-meta">11 окт 2025 — Гаджеты</p>
+          <h5>Как использовать стабилизатор для съёмки видео</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="about.html" class="btn-main">Читать больше</a>
+  </div>
+</section>
+
+   <!-- ======= Футер ======= -->
+  <footer class="text-center py-4 text-muted border-top bg-white">
+    © 2025 TECHNOMIR — Магазин компьютерной техники
+  </footer>
+
+  <!-- ======= Кнопка вверх ======= -->
+  <button id="toTopBtn" title="Наверх"><i class="bi bi-arrow-up-short"></i></button>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toTop = document.getElementById("toTopBtn");
+    window.addEventListener("scroll", () => {
+      toTop.classList.toggle("show", window.scrollY > 300);
+    });
+    toTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // === Обновление счётчика корзины (чтобы отображалось текущее количество) ===
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const total = cart.reduce((sum, item) => sum + item.qty, 0);
+      const counter = document.querySelector('.cart-count');
+      if (counter) counter.textContent = total;
+    }
+    updateCartCount();
+
+    // Обновляем счётчик при изменении корзины в других вкладках
+    window.addEventListener('storage', updateCartCount);
+  </script>
+
+  <script>
+function updateCountdown() {
+  const now = new Date();
+  const end = new Date(now.getFullYear(), now.getMonth() + 1, 1); // 1-е число следующего месяца
+  const diff = end - now;
+
+  if (diff <= 0) {
+    document.getElementById("timer").textContent = "Акция завершена 🎉";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("timer").textContent =
+    `${days} дн ${hours.toString().padStart(2, '0')}:${minutes
+      .toString()
+      .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // ===== Обновление счётчика корзины =====
+  function updateCartCount() {
+    const total = cart.reduce((sum, i) => sum + i.qty, 0);
+    const counter = document.querySelector('.cart-count');
+    if (counter) counter.textContent = total;
+  }
+
+  // ===== Сохранение корзины =====
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  // ===== Функции работы с корзиной =====
+  function addToCart(name, price, img, qty = 1) {
+    const existing = cart.find(i => i.name === name);
+    if (existing) existing.qty += qty;
+    else cart.push({ name, price, img, qty });
+    saveCart();
+  }
+
+  function updateQty(name, qty) {
+    const item = cart.find(i => i.name === name);
+    if (item) item.qty = qty;
+    saveCart();
+  }
+
+  function removeFromCart(name) {
+    const index = cart.findIndex(i => i.name === name);
+    if (index !== -1) cart.splice(index, 1);
+    saveCart();
+  }
+
+  // ===== Инициализация карточек =====
+  document.querySelectorAll('.product-card').forEach(card => {
+    const name = card.dataset.name;
+    const price = parseInt(card.dataset.price);
+    const img = card.dataset.img;
+
+    // если на странице нет quantity-box — создаём его
+    let qtyBox = card.querySelector('.quantity-box');
+    if (!qtyBox) {
+      qtyBox = document.createElement('div');
+      qtyBox.className = 'quantity-box';
+      qtyBox.innerHTML = `
+        <button class="btn btn-outline-dark btn-sm decrease">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase">+</button>
+      `;
+      card.querySelector('.cart-actions')?.appendChild(qtyBox);
+    }
+
+    const addBtn = card.querySelector('.add-btn');
+    const qtyEl = qtyBox.querySelector('.quantity');
+    let count = 1;
+
+    // Проверка: если товар уже есть в корзине
+    const inCart = cart.find(i => i.name === name);
+    if (inCart) {
+      addBtn?.classList.add('d-none');
+      qtyBox.classList.add('visible');
+      qtyEl.textContent = inCart.qty;
+      count = inCart.qty;
+    }
+
+    // Добавление товара
+    addBtn?.addEventListener('click', e => {
+      e.stopPropagation();
+      addBtn.classList.add('d-none');
+      qtyBox.classList.add('visible');
+      addToCart(name, price, img, count);
+    });
+
+    // Увеличение
+    qtyBox.querySelector('.increase').addEventListener('click', e => {
+      e.stopPropagation();
+      count++;
+      qtyEl.textContent = count;
+      updateQty(name, count);
+    });
+
+    // Уменьшение
+    qtyBox.querySelector('.decrease').addEventListener('click', e => {
+      e.stopPropagation();
+      if (count > 1) {
+        count--;
+        qtyEl.textContent = count;
+        updateQty(name, count);
+      } else {
+        count = 0;
+        removeFromCart(name);
+        qtyBox.classList.remove('visible');
+        addBtn?.classList.remove('d-none');
+      }
+    });
+
+    // Переход по клику на карточку
+    card.addEventListener('click', e => {
+      const isButton = e.target.closest('.add-btn') || e.target.closest('.quantity-box');
+      if (!isButton) window.location.href = 'catalog.html';
+    });
+  });
+
+  updateCartCount();
+});
+</script>
+
+</body>
+</html>

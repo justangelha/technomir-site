@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>О нас — Техномир</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+
+<!-- ======= Меню без JS ======= -->
+<input type="checkbox" id="menu-toggle" hidden>
+<label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+
+<nav class="side-menu">
+  <div class="menu-header">
+    <h2>TECHNOMIR</h2>
+    <label for="menu-toggle" class="menu-close">&times;</label>
+  </div>
+  <ul class="menu-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="catalog.html">Каталог</a></li>
+    <li><a href="cart.html">Корзина</a></li>
+    <li><a href="about.html" class="active">О нас</a></li>
+    <li><a href="contact.html">Контакты</a></li>
+  </ul>
+</nav>
+
+<!-- ===== Иконка корзины ===== -->
+<a href="cart.html" class="cart-icon">
+  <i class="bi bi-cart3"></i>
+  <span class="cart-count">0</span>
+</a>
+
+<!-- ======= Контент ======= -->
+<main class="content">
+
+  <!-- ===== Hero ===== -->
+  <section class="catalog-hero">
+    <div class="catalog-hero-content">
+      <h1>О нас</h1>
+      <p>Мы создаём мир технологий, где каждый может найти своё идеальное устройство.</p>
+    </div>
+  </section>
+
+<!-- ===== История и миссия ===== -->
+<section class="container py-5">
+  <div class="row align-items-center g-5 flex-row-reverse">
+    <div class="col-lg-6">
+      <img src="img/about.png" alt="Наш магазин" class="img-fluid rounded-4 shadow-sm">
+    </div>
+    <div class="col-lg-6">
+      <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+        <h2 class="section-title text-start">Кто мы?</h2>
+
+        <p class="text-muted mb-3">
+          Магазин <strong>«Техномир»</strong> основан в 2010 году и уже более 14 лет помогает людям подбирать технику под любые задачи — от учёбы и работы до игр и творчества.
+          Мы начинали с небольшого отдела компьютерных комплектующих и постепенно выросли в полноценный магазин, где каждый может найти решение под свой стиль жизни и бюджет.
+        </p>
+
+        <p class="text-muted mb-3">
+          Мы стремимся быть не просто продавцами техники, а надёжными помощниками.  
+          Каждое устройство, представленное в нашем каталоге, проходит тщательный отбор — мы тестируем его, изучаем отзывы, сравниваем модели, чтобы вы получали только проверенные и актуальные варианты.  
+          Наши консультанты всегда готовы объяснить технические характеристики простым языком и помочь сделать осознанный выбор.
+        </p>
+
+        <p class="text-muted mb-3">
+          Мы верим, что технологии должны быть понятными и доступными.  
+          Поэтому мы не гонимся за громкими брендами, а подбираем технику, исходя из её реальных преимуществ и надёжности.  
+        </p>
+        <p class="text-muted mb-0">
+          <em>
+            Наша цель — сделать покупку техники приятной, надёжной и осмысленной.  
+            «Техномир» — это место, где технологии становятся ближе, а сервис — по-настоящему человеческим.
+          </em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ===== Преимущества ===== -->
+  <section class="container py-5">
+    <h2 class="section-title text-center">Почему выбирают нас</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-3"><i class="bi bi-lightning-charge fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Современные технологии</h5><p class="text-muted small">Только актуальные модели и новейшие комплектующие.</p></div>
+      <div class="col-md-3"><i class="bi bi-people fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Опытная команда</h5><p class="text-muted small">Профессионалы, которые знают, как подобрать идеальный вариант.</p></div>
+      <div class="col-md-3"><i class="bi bi-bag-check fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Гарантия качества</h5><p class="text-muted small">Вся техника сертифицирована и проходит проверку перед продажей.</p></div>
+      <div class="col-md-3"><i class="bi bi-headset fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Поддержка 24/7</h5><p class="text-muted small">Отвечаем на все вопросы и помогаем даже после покупки.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== Отзывы ===== -->
+  <section class="container py-5">
+    <h2 class="section-title text-center">Отзывы наших клиентов</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm border-0 review-card h-100 text-center">
+          <p class="fst-italic mb-3">“Отличный магазин! Купила ноутбук HP — быстро доставили, всё упаковано идеально. Теперь рекомендую всем друзьям.”</p>
+          <div class="text-warning mb-2">★★★★★</div>
+          <h6 class="fw-bold mb-0">Екатерина Смирнова</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm border-0 review-card h-100 text-center">
+          <p class="fst-italic mb-3">“Порадовал сервис и консультация — помогли подобрать монитор для работы с цветом. Качество отличное, всё как описано.”</p>
+          <div class="text-warning mb-2">★★★★★</div>
+          <h6 class="fw-bold mb-0">Алексей Волков</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow-sm border-0 review-card h-100 text-center">
+          <p class="fst-italic mb-3">“Уже не первый заказ в Техномире — всегда быстро, аккуратно и с гарантией. SSD работает как часы, спасибо!”</p>
+          <div class="text-warning mb-2">★★★★★</div>
+          <h6 class="fw-bold mb-0">Марина Кузнецова</h6>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Частые вопросы ===== -->
+  <section class="container py-5">
+    <h2 class="section-title text-center mb-4">Частые вопросы</h2>
+
+    <div class="accordion accordion-flush shadow-sm rounded-4 bg-white" id="faqAccordion">
+
+      <div class="accordion-item border-bottom">
+        <h2 class="accordion-header" id="q1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
+            Как оформить заказ?
+          </button>
+        </h2>
+        <div id="a1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            Вы можете оформить заказ напрямую через сайт, добавив товары в корзину, или связаться с нами по телефону для консультации.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-bottom">
+        <h2 class="accordion-header" id="q2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+            Сколько времени занимает доставка?
+          </button>
+        </h2>
+        <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            По Туле доставка осуществляется в течение 1–2 дней, по России — от 3 до 7 рабочих дней. Курьер предварительно свяжется с вами.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-bottom">
+        <h2 class="accordion-header" id="q3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+            Можно ли вернуть товар?
+          </button>
+        </h2>
+        <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            Да, в течение 14 дней при сохранении упаковки и чека. Возврат возможен в магазине или по почте.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-bottom">
+        <h2 class="accordion-header" id="q4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">
+            Есть ли скидки для постоянных клиентов?
+          </button>
+        </h2>
+        <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">
+            Да, у нас действует система лояльности — постоянным клиентам предоставляются индивидуальные скидки и бонусы.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Футер ===== -->
+  <footer class="text-center py-4 text-muted border-top bg-white">
+    © 2025 TECHNOMIR — Магазин компьютерной техники
+  </footer>
+
+  <!-- Кнопка вверх -->
+  <button id="toTopBtn" title="Наверх"><i class="bi bi-arrow-up-short"></i></button>
+</main>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  const toTop = document.getElementById("toTopBtn");
+  window.addEventListener("scroll", () => {
+    toTop.classList.toggle("show", window.scrollY > 300);
+  });
+  toTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
+<script>
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const total = cart.reduce((sum, item) => sum + item.qty, 0);
+  const counter = document.querySelector('.cart-count');
+  if (counter) counter.textContent = total;
+}
+
+updateCartCount();
+
+// обновляем счётчик при изменении корзины (например, при добавлении)
+window.addEventListener('storage', updateCartCount);
+</script>
+
+</body>
+</html>

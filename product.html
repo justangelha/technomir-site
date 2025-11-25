@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Товар — Technomir</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <style>
+    .product-image {
+      width: 100%;
+      max-width: 450px;
+      height: 420px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      padding: 12px;
+      transition: transform 0.3s ease;
+    }
+    .product-image:hover { transform: scale(1.03); }
+
+    .product-info {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .review-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.4s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .rating-stars i:hover,
+    .rating-stars i:hover ~ i {
+      color: #ffc107 !important;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    .scroll-top:hover { background: #333; }
+
+    /* Похожие товары */
+    .similar-item {
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .similar-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body x-data="productPage()" x-init="init()">
+
+<!-- Меню -->
+<input type="checkbox" id="menu-toggle" hidden>
+<label for="menu-toggle" class="menu-btn">
+  <span></span><span></span><span></span>
+</label>
+
+<nav class="side-menu">
+  <div class="menu-header">
+    <h2>TECHNOMIR</h2>
+    <label for="menu-toggle" class="menu-close">&times;</label>
+  </div>
+  <ul class="menu-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="catalog.html">Каталог</a></li>
+    <li><a href="cart.html">Корзина</a></li>
+    <li><a href="about.html">О нас</a></li>
+    <li><a href="contact.html">Контакты</a></li>
+  </ul>
+</nav>
+
+<a href="cart.html" class="cart-icon">
+  <i class="bi bi-cart3"></i>
+  <span class="cart-count">0</span>
+</a>
+
+<!-- Hero -->
+<section class="catalog-hero">
+  <div class="catalog-hero-content">
+    <h1>Карточка товара</h1>
+    <p>Подробнее о выбранном устройстве — характеристики, цена и отзывы покупателей.</p>
+  </div>
+</section>
+
+<main class="container py-5">
+
+  <template x-if="product">
+    <div>
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-6 text-center">
+          <img :src="product.img" alt="" class="product-image">
+        </div>
+
+        <div class="col-lg-6 product-info">
+          <h2 class="fw-bold mb-3" x-text="product.name"></h2>
+          <p class="text-muted" x-text="product.desc"></p>
+
+          <div class="d-flex align-items-center mb-3">
+            <template x-for="star in 5">
+              <i class="bi fs-5 me-1" :class="star <= (product.rating || 0) ? 'bi-star-fill text-warning' : 'bi-star text-secondary'"></i>
+            </template>
+            <span class="text-muted ms-2" x-text="`(${product.rating || 0}/5)`"></span>
+          </div>
+
+          <p class="text-success fw-semibold"><i class="bi bi-check-circle"></i> В наличии</p>
+          <h4 class="fw-bold mb-3">₽ <span x-text="product.price.toLocaleString()"></span></h4>
+
+          <button class="btn btn-main w-100 mb-3" @click="addToCart()">
+            <i class="bi bi-cart-plus"></i> Добавить в корзину
+          </button>
+          <button class="btn btn-secondary w-100 mb-4" onclick="window.location.href='catalog.html'">
+            <i class="bi bi-arrow-left"></i> Вернуться в каталог
+          </button>
+
+          <hr class="opacity-50 my-4">
+
+          <h5 class="fw-semibold mb-2">Описание</h5>
+          <p class="text-muted" x-text="product.longDesc"></p>
+
+          <h5 class="fw-semibold mt-4">Характеристики</h5>
+          <ul class="list-unstyled text-muted">
+            <li><strong>Бренд:</strong> <span x-text="product.brand"></span></li>
+            <li><strong>Категория:</strong> <span x-text="product.category"></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Отзывы -->
+      <section class="reviews">
+        <h4 class="fw-bold mb-3 text-center">Отзывы</h4>
+
+        <form @submit.prevent="submitReview" class="mb-4 mx-auto" style="max-width:600px;">
+          <input x-model="newReview.user" class="form-control mb-2" placeholder="Ваше имя" required>
+          <textarea x-model="newReview.text" class="form-control mb-2" rows="3" placeholder="Ваш отзыв" required></textarea>
+
+          <div class="rating-stars d-flex justify-content-center gap-1 mb-3">
+            <template x-for="star in 5">
+              <i class="bi fs-4"
+                 :class="star <= newReview.rating ? 'bi-star-fill text-warning' : 'bi-star text-secondary'"
+                 @click="newReview.rating = star"
+                 style="cursor: pointer;"></i>
+            </template>
+          </div>
+
+          <button type="submit" class="btn btn-main w-100">Оставить отзыв</button>
+        </form>
+
+        <div class="mx-auto" style="max-width:600px;">
+          <template x-for="r in reviews" :key="r.id">
+            <div class="review-item">
+              <div class="d-flex align-items-center mb-1">
+                <strong x-text="r.user"></strong>
+                <div class="ms-2 text-warning">
+                  <template x-for="star in 5">
+                    <i class="bi" :class="star <= r.rating ? 'bi-star-fill' : 'bi-star'"></i>
+                  </template>
+                </div>
+              </div>
+              <p class="m-0" x-text="r.text"></p>
+            </div>
+          </template>
+        </div>
+      </section>
+
+      <!-- Похожие товары -->
+      <section class="similar mt-5">
+        <h4 class="fw-bold mb-4 text-center">Похожие товары</h4>
+        <div class="row g-4 justify-content-center">
+          <template x-for="p in similarProducts" :key="p.id">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="similar-item text-center p-3">
+                <img :src="p.img" alt="" class="img-fluid rounded mb-3" style="height:180px;object-fit:contain;">
+                <h6 class="fw-semibold" x-text="p.name"></h6>
+                <p class="text-muted small mb-2" x-text="p.desc"></p>
+                <p class="fw-bold mb-3">₽ <span x-text="p.price.toLocaleString()"></span></p>
+                <a :href="`product.html?id=${p.id}`" class="btn btn-outline-dark btn-sm w-100">Подробнее</a>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+    </div>
+  </template>
+</main>
+
+<div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  <i class="bi bi-arrow-up"></i>
+</div>
+
+<script>
+function productPage() {
+  return {
+    product: null,
+    reviews: [],
+    similarProducts: [],
+    newReview: { user: '', text: '', rating: 0 },
+
+    async init() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (!id) return;
+
+      const res = await fetch('data/products.json');
+      const products = await res.json();
+      this.product = products.find(p => p.id === id);
+      if (!this.product) return;
+
+      this.similarProducts = products.filter(p => p.category === this.product.category && p.id !== id).slice(0, 3);
+
+      const savedRating = localStorage.getItem(`rating-${id}`);
+      this.product.rating = savedRating ? parseFloat(savedRating) : (this.product.rating || 4.7);
+      this.loadReviews(id);
+      this.updateCartCount();
+    },
+
+    addToCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existing = cart.find(i => i.name === this.product.name);
+      if (existing) existing.qty++;
+      else cart.push({ name: this.product.name, price: this.product.price, img: this.product.img, qty: 1 });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      this.updateCartCount();
+    },
+
+    updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const total = cart.reduce((sum, i) => sum + i.qty, 0);
+      document.querySelector('.cart-count').textContent = total;
+    },
+
+    loadReviews(id) {
+      this.reviews = JSON.parse(localStorage.getItem(`reviews-${id}`)) || [];
+    },
+
+    submitReview() {
+      if (!this.newReview.user || !this.newReview.text || !this.newReview.rating)
+        return alert('Поставьте оценку!');
+      const id = new URLSearchParams(window.location.search).get('id');
+      const newR = { ...this.newReview, id: Date.now() };
+      this.reviews.push(newR);
+      localStorage.setItem(`reviews-${id}`, JSON.stringify(this.reviews));
+      this.newReview = { user: '', text: '', rating: 0 };
+    }
+  }
+}
+</script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

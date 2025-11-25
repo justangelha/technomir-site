@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Техномир — Каталог</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Меню ======= -->
+<input type="checkbox" id="menu-toggle" hidden>
+<label for="menu-toggle" class="menu-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<nav class="side-menu">
+  <div class="menu-header">
+    <h2>TECHNOMIR</h2>
+    <label for="menu-toggle" class="menu-close">&times;</label>
+  </div>
+  <ul class="menu-links">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="catalog.html" class="active">Каталог</a></li>
+    <li><a href="cart.html">Корзина</a></li>
+    <li><a href="about.html">О нас</a></li>
+    <li><a href="contact.html">Контакты</a></li>
+  </ul>
+</nav>
+
+<!-- ===== Иконка корзины ===== -->
+<a href="cart.html" class="cart-icon">
+  <i class="bi bi-cart3"></i>
+  <span class="cart-count">0</span>
+</a>
+
+<!-- ======= Контент ======= -->
+<main class="content">
+
+  <!-- ======= Hero / Баннер ======= -->
+  <section class="catalog-hero">
+    <div class="catalog-hero-content">
+      <h1>Каталог товаров</h1>
+      <p>Найди устройство, которое подходит именно тебе</p>
+    </div>
+  </section>
+
+
+  <!-- ======= Каталог ======= -->
+  <section class="container py-5">
+    <div class="row g-4">
+
+  <!-- Кнопка для открытия фильтра (только на мобильных) -->
+<div class="filter-toggle d-lg-none" onclick="toggleFilter()">
+  <i class="bi bi-funnel"></i> Фильтры
+</div>
+
+<!-- Фильтр -->
+<div class="col-lg-3">
+  <div class="filter-box bg-white rounded-4 p-4 shadow-sm">
+    <h4 class="fw-bold mb-3">Фильтры</h4>
+
+    <h5 class="fw-semibold mt-4 mb-2">Категории</h5>
+    <ul class="list-unstyled small">
+      <li><label><input type="checkbox" class="filter" data-type="category" value="Ноутбуки"> Ноутбуки</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="category" value="Настольные ПК"> Настольные ПК</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="category" value="Мониторы"> Мониторы</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="category" value="SSD-накопители"> SSD-накопители</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="category" value="Аксессуары"> Аксессуары</label></li>
+    </ul>
+
+    <h5 class="fw-semibold mt-4 mb-2">Бренды</h5>
+    <ul class="list-unstyled small">
+      <li><label><input type="checkbox" class="filter" data-type="brand" value="HP"> HP</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="brand" value="ASUS"> ASUS</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="brand" value="Acer"> Acer</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="brand" value="Samsung"> Samsung</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="brand" value="Logitech"> Logitech</label></li>
+      <li><label><input type="checkbox" class="filter" data-type="brand" value="Razer"> Razer</label></li>
+    </ul>
+
+    <h5 class="fw-semibold mt-4 mb-2">Цена</h5>
+    <ul class="list-unstyled small">
+      <li><label><input type="radio" name="price" class="filter" data-type="price" value="10000"> до ₽10 000</label></li>
+      <li><label><input type="radio" name="price" class="filter" data-type="price" value="50000"> ₽10 000 — ₽50 000</label></li>
+      <li><label><input type="radio" name="price" class="filter" data-type="price" value="100000"> ₽50 000 — ₽100 000</label></li>
+      <li><label><input type="radio" name="price" class="filter" data-type="price" value="100000+"> ₽100 000+</label></li>
+    </ul>
+
+    <button class="btn btn-secondary w-100 mt-3" id="resetFilters">Сбросить фильтры</button>
+  </div>
+</div>
+
+<!-- ======= Товары ======= -->
+<div class="col-lg-9">
+  <div class="row g-4">
+
+  <!-- HP Victus 16 -->
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-card text-center"
+       data-category="Ноутбуки"
+       data-brand="HP"
+       data-price="89990"
+       data-name="HP Victus 16"
+       data-img="img/laptop.png"
+       onclick="window.location.href='product.html?id=hp-victus-16'">
+    <img src="img/laptop.png" alt="HP Victus 16">
+    <h5>HP Victus 16</h5>
+    <p class="text-muted small">Игровой ноутбук для учёбы и развлечений</p>
+    <p class="price">₽ 89 990</p>
+
+    <div class="cart-actions">
+      <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation()">
+        <i class="bi bi-cart-plus"></i> Добавить в корзину
+      </button>
+      <div class="quantity-box mt-2">
+        <button class="btn btn-outline-dark btn-sm decrease" onclick="event.stopPropagation()">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase" onclick="event.stopPropagation()">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ASUS ROG Desktop -->
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-card text-center"
+       data-category="Настольные ПК"
+       data-brand="ASUS"
+       data-price="149990"
+       data-name="ASUS ROG Desktop"
+       data-img="img/desktop.png"
+       onclick="window.location.href='product.html?id=asus-rog-desktop'">
+    <img src="img/desktop.png" alt="ASUS ROG Desktop">
+    <h5>ASUS ROG Desktop</h5>
+    <p class="text-muted small">Компактный игровой ПК с RTX 4060</p>
+    <p class="price">₽ 149 990</p>
+
+    <div class="cart-actions">
+      <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation()">
+        <i class="bi bi-cart-plus"></i> Добавить в корзину
+      </button>
+      <div class="quantity-box mt-2">
+        <button class="btn btn-outline-dark btn-sm decrease" onclick="event.stopPropagation()">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase" onclick="event.stopPropagation()">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Acer Nitro 27″ -->
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-card text-center"
+       data-category="Мониторы"
+       data-brand="Acer"
+       data-price="19990"
+       data-name="Acer Nitro 27″"
+       data-img="img/monitor.png"
+       onclick="window.location.href='product.html?id=acer-nitro-27'">
+    <img src="img/monitor.png" alt="Acer Nitro 27">
+    <h5>Acer Nitro 27″</h5>
+    <p class="text-muted small">IPS-панель 180 Гц с FreeSync</p>
+    <p class="price">₽ 19 990</p>
+
+    <div class="cart-actions">
+      <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation()">
+        <i class="bi bi-cart-plus"></i> Добавить в корзину
+      </button>
+      <div class="quantity-box mt-2">
+        <button class="btn btn-outline-dark btn-sm decrease" onclick="event.stopPropagation()">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase" onclick="event.stopPropagation()">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Samsung 990 EVO 1 ТБ -->
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-card text-center"
+       data-category="SSD-накопители"
+       data-brand="Samsung"
+       data-price="7990"
+       data-name="Samsung 990 EVO 1 ТБ"
+       data-img="img/ssd.png"
+       onclick="window.location.href='product.html?id=samsung-990-evo'">
+    <img src="img/ssd.png" alt="Samsung 990 EVO 1 ТБ">
+    <h5>Samsung 990 EVO 1 ТБ</h5>
+    <p class="text-muted small">NVMe SSD для игр и ОС</p>
+    <p class="price">₽ 7 990</p>
+
+    <div class="cart-actions">
+      <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation()">
+        <i class="bi bi-cart-plus"></i> Добавить в корзину
+      </button>
+      <div class="quantity-box mt-2">
+        <button class="btn btn-outline-dark btn-sm decrease" onclick="event.stopPropagation()">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase" onclick="event.stopPropagation()">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Logitech G Pro X -->
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-card text-center"
+       data-category="Аксессуары"
+       data-brand="Logitech"
+       data-price="12490"
+       data-name="Logitech G Pro X"
+       data-img="img/headphones.png"
+       onclick="window.location.href='product.html?id=logitech-g-pro-x'">
+    <img src="img/headphones.png" alt="Logitech G Pro X">
+    <h5>Logitech G Pro X</h5>
+    <p class="text-muted small">Игровая гарнитура с микрофоном Blue VO!CE</p>
+    <p class="price">₽ 12 490</p>
+
+    <div class="cart-actions">
+      <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation()">
+        <i class="bi bi-cart-plus"></i> Добавить в корзину
+      </button>
+      <div class="quantity-box mt-2">
+        <button class="btn btn-outline-dark btn-sm decrease" onclick="event.stopPropagation()">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase" onclick="event.stopPropagation()">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Razer Basilisk V3 -->
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-card text-center"
+       data-category="Аксессуары"
+       data-brand="Razer"
+       data-price="6490"
+       data-name="Razer Basilisk V3"
+       data-img="img/mouse.png"
+       onclick="window.location.href='product.html?id=razer-basilisk-v3'">
+    <img src="img/mouse.png" alt="Razer Basilisk V3">
+    <h5>Razer Basilisk V3</h5>
+    <p class="text-muted small">Игровая мышь с RGB-подсветкой</p>
+    <p class="price">₽ 6 490</p>
+
+    <div class="cart-actions">
+      <button class="btn btn-main add-btn w-100" onclick="event.stopPropagation()">
+        <i class="bi bi-cart-plus"></i> Добавить в корзину
+      </button>
+      <div class="quantity-box mt-2">
+        <button class="btn btn-outline-dark btn-sm decrease" onclick="event.stopPropagation()">–</button>
+        <span class="quantity fw-semibold fs-6">1</span>
+        <button class="btn btn-outline-dark btn-sm increase" onclick="event.stopPropagation()">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  </section>
+<!-- ======= Отзывы клиентов ======= -->
+<section class="container py-5">
+  <h2 class="section-title text-center">Отзывы наших клиентов</h2>
+
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="review-card p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+        <p class="text-muted fst-italic">
+          “Отличный магазин! Покупала ноутбук HP — быстро доставили, всё запаковано идеально. Теперь рекомендую всем друзьям.”
+        </p>
+        <div class="text-warning my-2">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <h6 class="fw-semibold mb-0">Екатерина Смирнова</h6>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="review-card p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+        <p class="text-muted fst-italic">
+          “Порадовал сервис и консультация — помогли подобрать монитор для работы с цветом. Качество отличное, всё как описано.”
+        </p>
+        <div class="text-warning my-2">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <h6 class="fw-semibold mb-0">Алексей Волков</h6>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="review-card p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+        <p class="text-muted fst-italic">
+          “Уже не первый заказ в Техномире — всегда быстро, аккуратно, с гарантией. SSD работает как часы, спасибо!”
+        </p>
+        <div class="text-warning my-2">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <h6 class="fw-semibold mb-0">Марина Кузнецова</h6>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5">
+    <div class="row text-center g-4">
+      <div class="col-md-3"><i class="bi bi-truck fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Быстрая доставка</h5><p class="text-muted small">1–3 дня по России</p></div>
+      <div class="col-md-3"><i class="bi bi-shield-check fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Гарантия качества</h5><p class="text-muted small">Официальная техника</p></div>
+      <div class="col-md-3"><i class="bi bi-gift fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Акции и бонусы</h5><p class="text-muted small">Скидки клиентам</p></div>
+      <div class="col-md-3"><i class="bi bi-credit-card fs-1 text-dark"></i><h5 class="mt-3 fw-bold">Удобная оплата</h5><p class="text-muted small">Любые способы оплаты</p></div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 text-muted border-top bg-white">
+    © 2025 TECHNOMIR — Магазин компьютерной техники
+  </footer>
+
+  <button id="toTopBtn" title="Наверх"><i class="bi bi-arrow-up-short"></i></button>
+
+</main>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  const toTop = document.getElementById("toTopBtn");
+  window.addEventListener("scroll", () => {
+    toTop.classList.toggle("show", window.scrollY > 300);
+  });
+  toTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+</script>
+<script>
+
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+document.querySelectorAll('.product-card').forEach(card => {
+  const addBtn = card.querySelector('.add-btn');
+  const qtyBox = card.querySelector('.quantity-box');
+  const qtyEl = qtyBox?.querySelector('.quantity');
+  const name = card.dataset.name;
+  const price = parseInt(card.dataset.price);
+  const img = card.dataset.img;
+  let count = 1;
+
+  const inCart = cart.find(i => i.name === name);
+  if (inCart && addBtn && qtyBox) {
+    addBtn.classList.add('d-none');
+    qtyBox.classList.add('visible');
+    qtyEl.textContent = inCart.qty;
+    count = inCart.qty;
+  }
+
+  addBtn?.addEventListener('click', () => {
+    addBtn.classList.add('d-none');
+    qtyBox.classList.add('visible');
+    addToCart(name, price, img, count);
+  });
+
+  qtyBox?.querySelector('.increase')?.addEventListener('click', () => {
+    count++;
+    qtyEl.textContent = count;
+    updateQty(name, count);
+  });
+
+  qtyBox?.querySelector('.decrease')?.addEventListener('click', () => {
+    if (count > 1) {
+      count--;
+      qtyEl.textContent = count;
+      updateQty(name, count);
+    } else {
+      count = 0;
+      removeFromCart(name);
+      qtyBox.classList.remove('visible');
+      addBtn.classList.remove('d-none');
+    }
+  });
+});
+
+function addToCart(name, price, img, qty) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) existing.qty += qty;
+  else cart.push({ name, price, img, qty });
+  saveCart();
+}
+
+function updateQty(name, qty) {
+  const item = cart.find(i => i.name === name);
+  if (item) item.qty = qty;
+  saveCart();
+}
+
+function removeFromCart(name) {
+  const index = cart.findIndex(i => i.name === name);
+  if (index !== -1) cart.splice(index, 1);
+  saveCart();
+}
+
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const data = JSON.parse(localStorage.getItem('cart')) || [];
+  const total = data.reduce((sum, i) => sum + i.qty, 0);
+  const counter = document.querySelector('.cart-count');
+  if (counter) counter.textContent = total;
+}
+updateCartCount();
+
+// ======= ЛОГИКА ФИЛЬТРОВ =======
+const filters = document.querySelectorAll('.filter');
+const resetBtn = document.getElementById('resetFilters');
+const products = document.querySelectorAll('.product-card');
+
+filters.forEach(f => f.addEventListener('change', applyFilters));
+resetBtn.addEventListener('click', () => {
+  filters.forEach(f => (f.checked = false));
+  applyFilters();
+});
+
+function applyFilters() {
+  const activeFilters = {
+    category: [],
+    brand: [],
+    price: null
+  };
+
+  filters.forEach(f => {
+    if (f.checked) {
+      if (f.dataset.type === 'category') activeFilters.category.push(f.value);
+      if (f.dataset.type === 'brand') activeFilters.brand.push(f.value);
+      if (f.dataset.type === 'price') activeFilters.price = f.value;
+    }
+  });
+
+  products.forEach(card => {
+    const cat = card.dataset.category;
+    const brand = card.dataset.brand;
+    const price = parseInt(card.dataset.price);
+
+    const matchCategory = activeFilters.category.length ? activeFilters.category.includes(cat) : true;
+    const matchBrand = activeFilters.brand.length ? activeFilters.brand.includes(brand) : true;
+    let matchPrice = true;
+
+    if (activeFilters.price) {
+      const val = activeFilters.price;
+      if (val === '10000') matchPrice = price <= 10000;
+      else if (val === '50000') matchPrice = price > 10000 && price <= 50000;
+      else if (val === '100000') matchPrice = price > 50000 && price <= 100000;
+      else matchPrice = price > 100000;
+    }
+
+    card.parentElement.style.display = (matchCategory && matchBrand && matchPrice) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
